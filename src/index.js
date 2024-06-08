@@ -1,17 +1,11 @@
-import _ from "lodash";
-import printMe from "./print.js";
+import { cube } from "./math.js";
 
 function component() {
-  const element = document.createElement("div");
-  const btn = document.createElement("button");
+  const element = document.createElement("pre");
 
-  // Lodash foi importado pela linha 1 lá em cima
-  element.innerHTML = _.join(["Oioi", "webpack"], " ");
-
-  btn.innerHTML = "Click me and check the console!";
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
+  element.innerHTML = ["Hello webpack!", "5 cubed is equal to " + cube(5)].join(
+    "\n\n",
+  );
 
   return element;
 }
